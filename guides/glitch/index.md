@@ -10,7 +10,7 @@ So, assume we know we want to be doing this. Let's look at some of our options.
 
 ### Scramble
 
-The first effect I made in this vein wasn't even with templates. It uses the Unscramble mode of [Typewriter][typewriter], though the effect from that script can't really be applied to dialogue. See [Asakura's Tensura](asakura-tensura-unscramble.webm) for a sample of the script in action.
+The first effect I made in this vein wasn't even with templates. It uses the Unscramble mode of [Typewriter][typewriter], though the effect from that script can't really be applied to dialogue. See [Asakura's Tensura](asakura-tensura-unscramble.webm) (note: the sign, not dialogue) for a sample of the script in action.
 
 This is probably best saved for pre/postline effects, since it has the potential to be quite disorienting, but a temporally-limited one could work well. The main issue is with the entire structure of the line (potentially) changing as actual text content is changed.
 
