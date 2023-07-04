@@ -25,6 +25,8 @@ So, what does this mean for KFX? Well, the two biggest takeaways here are these:
 1. Attack should be fast, and generally always the same duration
 2. Long notes should be sustained/decayed before being released
 
+#### Simple up-and-down effect
+
 It's much too common a mistake, in my experience, to make a "triangular" syl highlight, that linearly increases, peaks at the middle of the syl, and then linearly decays back to the original size until the end of the syl (see below).
 
 ![Demonstration of a triangular syl highlight](triangle-effect.gif)
@@ -33,6 +35,19 @@ This could be generated, for instance, with the following simple template. The s
 
 ```
 template syl: {!ln.tag.pos(5,5)! \t(!syl.start_time!,!syl.start_time + 0.5*syl.duration!,\fscx130\fscy130) \t(!syl.start_time + 0.5*syl.duration!,!syl.end_time!,\fscx100\fscy100)}
+kara:         {\k50}{\k50}The {\k37}quick {\k38}brown {\k75}fox {\k150}jumps{\k50}
 ```
 
-However, this effect has failed on both aforementioned points: The "attack" is very slow, especially on long syls, and thus entirely misses the "peak" of the actual note; and the rest of DSR is also all linear, no matter the length of the syl.
+However, this effect has failed on both aforementioned points: The "attack" is very slow, especially on long syls, and thus entirely misses the "peak" of the actual note; and the rest of DSR is also all linear, no matter the length of the syl. Let's tackle these things one at a time.
+
+#### Sharper attack
+
+It's quite simple to fix the first issue: just use a constant duration for the growing part of the effect. Let's update our template a bit:
+
+```
+template syl: {!ln.tag.pos(5,5)! \t(!syl.start_time!,!syl.start_time + 100!,\fscx130\fscy130) \t(!syl.start_time + 100!,!syl.end_time!,\fscx100\fscy100)}
+```
+
+However, this is not quite perfect. If we have very short syls, the attack will actually be _longer_ than the decay at the end. (TODO: make a sample of this)
+
+One way around this is to limit the duration of the growing part to some portion of the syl's total duration. This could be done e.g. like so: `syl.start_time + math.min(100, syl.duration * 0.4)`. Naturally, is not the only way to go about it, and we will touch on another way to handle this when we talk about [timing to notes](#timing-peaks-to-notes).
