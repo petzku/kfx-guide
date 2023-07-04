@@ -29,7 +29,7 @@ It's much too common a mistake, in my experience, to make a "triangular" syl hig
 
 ![Demonstration of a triangular syl highlight](triangle-effect.gif)
 
-This could be generated, for instance, with the following simple template.
+This could be generated, for instance, with the following simple template. The stock templater would also have the `$smid` (mid-time of syllable) in-line variable, which could make this even shorter, but as we will see, this is not actually very useful in practice (as we will be doing math to compute transform times anyway).
 
 ```
 template syl: {!ln.tag.pos(5,5)! \t(!syl.start_time!,!syl.start_time + 0.5*syl.duration!,\fscx130\fscy130) \t(!syl.start_time + 0.5*syl.duration!,!syl.end_time!,\fscx100\fscy100)}
