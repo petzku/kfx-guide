@@ -8,6 +8,7 @@ When talking about sound or music, "envelope" usually describes how a given soun
 
 - A piano key or a guitar string produces a near-instant sound when played, that slowly decays over time as long as the note is held, and mutes as soon as the key is released or the string muted
 - A bowed string instrument like a violin takes a longer time to produce the peak volume when the string is bowed, and only remains that way as long as the player bows the string, but the sound still decays somewhat slowly afterwards
+- Some percussion instruments, primarily drums, produce a sound immediately when struck, but cannot be held, and thus decay to nothing very quickly too. Some drums, such as snare drums, decay somewhat slower than others, but the sound still cannot really be _held_, as you might on a piano.
 <!-- TODO: add more examples here? -->
 
 Here, we'll mostly be focusing on the first kind of sounds, though the ideas are transferrable to other kinds of envelopes, too. This kind of envelope is usually thought of as an idealized "ADSR" model, standing for "Attack, Decay, Sustain, Release". The diagram below demonstrates what each of these mean:
