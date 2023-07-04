@@ -51,3 +51,27 @@ template syl: {!ln.tag.pos(5,5)! \t(!syl.start_time!,!syl.start_time + 100!,\fsc
 However, this is not quite perfect. If we have very short syls, the attack will actually be _longer_ than the decay at the end. (TODO: make a sample of this)
 
 One way around this is to limit the duration of the growing part to some portion of the syl's total duration. This could be done e.g. like so: `syl.start_time + math.min(100, syl.duration * 0.4)`. Naturally, is not the only way to go about it, and we will touch on another way to handle this when we talk about [timing to notes](#timing-peaks-to-notes).
+
+#### Slow decay before fast(er) release
+
+- can fix release start time to e.g. 80% of syl
+  - or, better, constant time but at least 20% of syl duration
+- two linear transforms, or `accel < 1` to slow down on decay (or both)
+
+### Thinking in terms of notes
+
+TODO
+
+#### Timing peaks to notes
+
+- starting effect before syl -> peak can land on syl exactly
+- hint at overlapping envelopes (more to come in next section)
+
+#### Sustain and release after the syl
+
+- overlapping envelopes is fine, actually
+- constant release time works without clamping if not constrained by duration
+
+## TODO (not a real section, just collecting thoughts here)
+
+- "fixed" durations could differ based on section
