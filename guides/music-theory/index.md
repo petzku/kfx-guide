@@ -75,3 +75,7 @@ TODO
 ## TODO (not a real section, just collecting thoughts here)
 
 - "fixed" durations could differ based on section
+- special effects for long notes (analogy to vibrato)
+- (probably more appropriate for a k-timing guide, but could be relevant here)
+  - using (and departing from) exact BPM timings
+  - s/z and other tricky sounds (sibilants don't _start_ on the note)
