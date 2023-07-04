@@ -17,3 +17,22 @@ Here, we'll mostly be focusing on the first kind of sounds, though the ideas are
 *Diagram of an idealized ADSR envelope. © Abdull / Wikimedia Commons / CC-BY-SA-3.0*
 
 The durations of these all can vary, but typically Attack is much shorter than the others. Decay can start immediately after Attack is over (i.e. the sound has reached its peak), but the sound can also be Sustained at or near the peak (such as with the violin), before Release, where the amplitude drops back down to zero. Typically, Release is slightly longer than Attack.
+
+### ADSR in KFX
+
+So, what does this mean for KFX? Well, the two biggest takeaways here are these:
+
+1. Attack should be fast, and generally always the same duration
+2. Long notes should be sustained/decayed before being released
+
+It's much too common a mistake, in my experience, to make a "triangular" syl highlight, that linearly increases, peaks at the middle of the syl, and then linearly decays back to the original size until the end of the syl (see below).
+
+![Demonstration of a triangular syl highlight](triangle-effect.gif)
+
+This could be generated, for instance, with the following simple template.
+
+```
+template syl: {!ln.tag.pos(5,5)! \t(!syl.start_time!,!syl.start_time + 0.5*syl.duration!,\fscx130\fscy130) \t(!syl.start_time + 0.5*syl.duration!,!syl.end_time!,\fscx100\fscy100)}
+```
+
+However, this effect has failed on both aforementioned points: The "attack" is very slow, especially on long syls, and thus entirely misses the "peak" of the actual note; and the rest of DSR is also all linear, no matter the length of the syl.
