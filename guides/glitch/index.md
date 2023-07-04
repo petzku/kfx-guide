@@ -26,7 +26,7 @@ This is essentially a vertical clip-based gradient, with each stripe getting a r
 
 I can't really take credit for this; I was largely inspired by Zahuczhy's KFX on the Lycoris Recoil opening. My version here is a fairly stripped version of what the full effect is in that release, but it serves to demonstrate the idea.
 
-Nevertheless, the concept is simple: discolor and dislocate a small part of the line very briefly. Repeat a bunch over the line's duration and length.
+Nevertheless, the concept is simple: discolor and dislocate a small part of the line very briefly. Repeat a bunch over the line's duration and length. It doesn't have to be just colors, either: you can use e.g. `\fax` as well, leave the border out on some or all of them, and so on.
 
 ![Lorem ipsum, with randomly-appearing fragments of the same text in various colors, slightly offset from the original text](corruption.gif)
 
