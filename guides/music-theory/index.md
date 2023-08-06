@@ -78,4 +78,16 @@ TODO
 - special effects for long notes (analogy to vibrato)
 - (probably more appropriate for a k-timing guide, but could be relevant here)
   - using (and departing from) exact BPM timings
+    - [midicsv2ass](https://github.com/butterfansubs/midicsv2ass) can be very helpful
   - s/z and other tricky sounds (sibilants don't _start_ on the note)
+    - actually most of the time, notes should start on the _vowel_
+    - look at the raw (white-red) ktiming in aegisub and use your eyes and rhythm perception, try feeling out the beat: does your syl _actually_ turn white at the right time?
+    - apply BPM thinking to this too: syl durations should always be _roughly_ multiples of the shortest one, e.g. a song with mostly \k17, \k33 or \k34, and _probably_ shouldn't have a \k28 syl
+      - the ~170 ms minimum duration hints at ~90 BPM
+      - 280 ms would be about 1.7 times a 16th note at that BPM (a tenth-note?), too short to be an eight and too long to be a dotted 16th; thus, _probably_ (but not necessarily) mistimed
+
+!["ka" syl with \k10 duration, ending as the sibilant of "sa" starts](kasa-mistimed.png)
+*definitely wrong: "sa" starts on the very start of the sibilant, and "ka" is cut very short*
+
+!["ka" syl with \k21 duration, ending as the vowel of "sa" starts](kasa-better.png)
+*better: "sa" starts at the exact start of the vowel, which is also where the actual beat lands*
